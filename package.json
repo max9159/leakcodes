@@ -1,0 +1,18 @@
+{
+  "name": "leakcodes",
+  "version": "1.0.0",
+  "description": "leeeeeeeeeet",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "max.chou",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
