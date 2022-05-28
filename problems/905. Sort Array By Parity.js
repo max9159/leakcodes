@@ -12,3 +12,5 @@
   }
   return sum;
 };
+
+module.exports = arrayPairSum;
