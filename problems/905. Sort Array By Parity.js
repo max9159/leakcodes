@@ -1,32 +1,14 @@
-var sortArrayByParity = function(nums) {
-  if(nums.length < 2)
-  return nums;
-  
-  var newNums = [];
-  for (let index = 0; index < nums.length; index++) {
-  const isEven = nums[index] % 2 === 0;
-  if(isEven)
-    newNums.unshift(nums[index]);
-  else
-    newNums.push(nums[index]);
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var arrayPairSum = function (nums) {
+  const sortedNums = nums.sort((a, b) => b - a);
+  let sum = 0;
+  for (let i = 0; i <= sortedNums.length - 1; i = i + 2) {
+    const currNum = sortedNums[i];
+    const nextNum = sortedNums[i + 1];
+    sum = sum + Math.min(currNum, nextNum);
   }
-  return newNums;
-};
-
-
-var sortArrayByParity = function(nums) {
-  if(nums.length < 2)
-  return nums;
-  
-  var evenNums = [];
-  var oddNums = [];
-  for (let index = 0; index < nums.length; index++) {
-    const element = nums[index];
-    const isEven = element % 2 === 0;
-    if(isEven)
-      evenNums.push(element);
-    else
-      oddNums.push(element);
-  }
-  return [...evenNums,...oddNums];
+  return sum;
 };
