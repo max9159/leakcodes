@@ -7,7 +7,7 @@
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
       "stopOnEntry": false,
-      "args": ["${workspaceRoot}/test/905. Sort Array By Parity.test.js", "--no-timeouts"],
+      "args": ["${workspaceRoot}/test/testAllCases.js", "--no-timeouts"],
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": null,
       "env": {
