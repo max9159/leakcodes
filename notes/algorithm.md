@@ -2,7 +2,7 @@
 
 ## Binary Tree
 - Hints
-  - Default Pattern Codesnipt 
+  - Code snipe
   ``` javascript
     function traverse(root) {
       if (root === null) return;
@@ -15,9 +15,59 @@
   ```
 - leetcode
   - https://leetcode.com/tag/binary-tree/
-
+## Fast and Slow Pointer: O(n)
+- Hints
+  - Code snipe
+  ``` javascript
+  function (nums) {
+    let left = 0, right = 0;
+    while (right < nums.length) { 
+      if(nums[right] != nums[left]){
+        left++
+        nums[left] = nums[right];
+      }
+      right++;
+    }
+    return left + 1;
+  }; 
+  function (head) {
+    if (head == null) return null;
+    let slow = head, fast = head;
+    while (fast != null) {
+      if (slow.val != fast.val) {
+        slow.next = fast;
+        slow = slow.next;
+      }
+      fast = fast.next;
+    }
+    slow.next = null;
+    return head;
+  };
+  ```
+- leetcode
+  - https://leetcode.com/tag/two-pointers/
 ## Sliding Window(Two pointer): O(n)
 - Hints
+  - Code Snippet
+  ``` javascript
+  function (s) {
+    let left = 0, right = 0, result = 0;
+    let validMap = {};
+
+    while (right < s.length) {
+      let addChar = s[right];
+      right++;
+      validMap[addChar] = (validMap[addChar] || 0) + 1;
+      while (validMap[addChar] > 1) {
+        let delChar = s[left];
+        left++;
+        validMap[delChar] = (validMap[delChar] || 0) - 1;
+      }
+      result = Math.max(result, right - left);
+    }
+    return result;
+  };
+  ```
   - All positive integers
   - Extend the range til target
   - Move the start and end
