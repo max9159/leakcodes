@@ -16,7 +16,7 @@
 - leetcode
   - https://leetcode.com/tag/binary-tree/
 
-## Sliding Window: O(n)
+## Sliding Window(Two pointer): O(n)
 - Hints
   - All positive integers
   - Extend the range til target
