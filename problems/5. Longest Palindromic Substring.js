@@ -1,8 +1,35 @@
+// ================================= Sloution 2 ===============================
 /**
  * @param {string} s
  * @return {string}
  */
- var longestPalindrome = function (s) {
+var longestPalindrome = function (s) {
+
+  function palindrome(str, left, right) {
+    while (left >= 0 && right < str.length && str[left] === str[right]) {
+      left--;
+      right++;
+    }
+    return str.substring(left + 1, right);å
+  }
+
+  let result = '';
+  for (var i = 0; i < s.length; i++) {
+    const chkSubstr1 = palindrome(s, i, i);
+    const chkSubstr2 = palindrome(s, i, i + 1);
+    result = result.length > chkSubstr1.length ? result : chkSubstr1;
+    result = result.length > chkSubstr2.length ? result : chkSubstr2;
+
+  }
+  return result;
+};
+
+// ================================ Sloution 1 =========================================
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function (s) {
 
   if (s.length < 2) return s;
 
