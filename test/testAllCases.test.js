@@ -1,7 +1,7 @@
 var assert = require("assert");
-var arrayPairSum = require("../problems/905. Sort Array By Parity");
+var arrayPairSum = require("../problems/TwoPointers/905. Sort Array By Parity");
 var containsDuplicate = require('../problems/217. Contains Duplicate');
-var lengthOfLongestSubstring = require('../problems/3. Longest Substring Without Repeating Characters M');
+var lengthOfLongestSubstring = require('../problems/SlidingWindow/3. Longest Substring Without Repeating Characters M');
 
 
 describe("3. Longest Substring Without Repeating Characters M", () => {
