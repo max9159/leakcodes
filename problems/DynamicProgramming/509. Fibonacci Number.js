@@ -1,21 +1,18 @@
+// ============================ Sloution 2 =====================================
 /**
  * @param {number} n
  * @return {number}
  */
 var fib = function (n) {
-  let sum = 0;
-
-  function fval(_n) {
-    if (_n === 0) return 0;
-    if (_n === 1) return 1;
-    let tempN = _n;
-    _n--;
-    return fval(tempN) + _n;
+  let memo = new Array(n);
+  memo[0] = 0, memo[1] = 1;
+  for (let i = 2; i <= n; i++) {
+    memo[i] = memo[i - 1] + memo[i - 2];
   }
-
-  return fval(n);
+  return memo[n];
 };
 
+//============================ Sloution 1 ====================================
 /**
  * @param {number} n
  * @return {number}
