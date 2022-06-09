@@ -1,7 +1,7 @@
 var assert = require("assert");
 var arrayPairSum = require("../problems/TwoPointers/905. Sort Array By Parity");
 var containsDuplicate = require('../problems/217. Contains Duplicate');
-var lengthOfLongestSubstring = require('../problems/SlidingWindow/3. Longest Substring Without Repeating Characters M');
+var lengthOfLongestSubstring = require('../problems/SlidingWindow/3. Longest Substring Without Repeating Characters');
 var findCheapestPrice = require('../problems/DynamicProgramming/787. Cheapest Flights Within K Stops');
 const coinChange = require("../problems/DynamicProgramming/322. Coin Change");
 
@@ -40,7 +40,19 @@ describe("3. Longest Substring Without Repeating Characters M", () => {
     assert.equal(result, expectedResult);
   });
 
-  it("Should be 6 for 'bbtablud'", () => {
+  it("3. Longest Substring Without Repeating Characters", () => {
+    // Arrange
+    const s = "pwwkew";
+    const expectedResult = 3;
+
+    // Action 
+    const result = lengthOfLongestSubstring(s)
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("3. Longest Substring Without Repeating Characters 2", () => {
     // Arrange
     const s = "bbtablud";
     const expectedResult = 6;
@@ -51,7 +63,7 @@ describe("3. Longest Substring Without Repeating Characters M", () => {
     // Assert
     assert.equal(result, expectedResult);
   });
-  it("Should be 5 for 'qrsvbspk'", () => {
+  it("3. Longest Substring Without Repeating Characters 3", () => {
     // Arrange
     const s = "qrsvbspk";
     const expectedResult = 5;
@@ -63,7 +75,7 @@ describe("3. Longest Substring Without Repeating Characters M", () => {
     assert.equal(result, expectedResult);
   });
 
-  it("Should always pass", () => {
+  it("3. Longest Substring Without Repeating Characters 4", () => {
     // Arrange
     const s = "abcabcbb";
     const expectedResult = 3;
