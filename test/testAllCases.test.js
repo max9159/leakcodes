@@ -6,7 +6,7 @@ var findCheapestPrice = require('../problems/DynamicProgramming/787. Cheapest Fl
 const coinChange = require("../problems/DynamicProgramming/322. Coin Change");
 
 describe("3. Longest Substring Without Repeating Characters M", () => {
-  it("322. Coin Change", () => {
+  it("322. Coin Change 1", () => {
     // Arrange
     const expectedResult = 3;
     const conis = [1, 2, 5];
@@ -17,7 +17,7 @@ describe("3. Longest Substring Without Repeating Characters M", () => {
     // Assert
     assert.equal(result, expectedResult);
   });
-  it("322. Coin Change", () => {
+  it("322. Coin Change 2", () => {
     // Arrange
     const expectedResult = 20;
     const conis = [186, 419, 83, 408];
