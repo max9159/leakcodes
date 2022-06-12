@@ -77,10 +77,35 @@
 ## BFS
 ## DFS
 ## Dynamic Programing
+- Hints
+  - Init dp table for memo.
+  - 
 ## Dijkstra’s Algorithm
 ## Sequece Search: O(n)
 ## Binary Search: O(log n)
-  - array has been srtoed then split 
+- Hints
+  - array has been srtoed then split
+  - Code Snippet
+  ``` js
+  function lengthOfLIS(nums) {
+    let top = Array(nums.length).fill(0);
+    let piles = 0;
+    for (let i = 0; i < nums.length; i++) {
+      let poker = nums[i];
+      let left = 0, right = piles;
+      while (left < right) {
+        let mid = Math.floor((left + right) / 2);
+        if (top[mid] >= poker)
+          right = mid;
+        else
+          left = mid + 1;
+      }
+      if (left === piles) piles++;
+      top[left] = poker;
+    }
+    return piles;
+  }
+  ```
 ## merge sort: O(nlogn) 
   - splict then merge result
 ## quick sort: O(nlogn) 

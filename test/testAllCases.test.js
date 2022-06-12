@@ -1,11 +1,69 @@
 var assert = require("assert");
 var arrayPairSum = require("../problems/TwoPointers/905. Sort Array By Parity");
-var containsDuplicate = require('../problems/217. Contains Duplicate');
+var containsDuplicate = require('../problems/DataStructures/217. Contains Duplicate');
 var lengthOfLongestSubstring = require('../problems/SlidingWindow/3. Longest Substring Without Repeating Characters');
 var findCheapestPrice = require('../problems/DynamicProgramming/787. Cheapest Flights Within K Stops');
 const coinChange = require("../problems/DynamicProgramming/322. Coin Change");
+const maxEnvelopes = require("../problems/DynamicProgramming/354. Russian Doll Envelopes");
 
 describe("3. Longest Substring Without Repeating Characters M", () => {
+  it("354. Russian Doll Envelopes - 5", () => {
+    // Arrange
+    const expectedResult = 6;
+    // [5,7], [8,9], [13, 11], [14,17], [18,19]
+    const envelopes = [[10, 4], [13, 18], [1, 5], [13, 15], [3, 12], [12, 11], [17, 15], [7, 1], [17, 18], [7, 19], [2, 5], [8, 9], [18, 10], [7, 6], [17, 7]];
+    // Action 
+    const result = maxEnvelopes(envelopes);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("354. Russian Doll Envelopes - 4", () => {
+    // Arrange
+    const expectedResult = 5;
+    // [5,7], [8,9], [13, 11], [14,17], [18,19]
+    const envelopes = [[15, 8], [2, 20], [2, 14], [4, 17], [8, 19], [8, 9], [5, 7], [11, 19], [8, 11], [13, 11], [2, 13], [11, 19], [8, 11], [13, 11], [2, 13], [11, 19], [16, 1], [18, 13], [14, 17], [18, 19]];
+    // Action 
+    const result = maxEnvelopes(envelopes);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("354. Russian Doll Envelopes - 3", () => {
+    // Arrange
+    const expectedResult = 3;
+    const envelopes = [[1, 3], [3, 5], [6, 7], [6, 8], [8, 4], [9, 5]];
+    // Action 
+    const result = maxEnvelopes(envelopes);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("354. Russian Doll Envelopes - 2", () => {
+    // Arrange
+    const expectedResult = 3;
+    const envelopes = [[30, 50], [12, 2], [3, 4], [12, 15]];
+    // Action 
+    const result = maxEnvelopes(envelopes);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("354. Russian Doll Envelopes - 1", () => {
+    // Arrange
+    const expectedResult = 5;
+    const envelopes = [[2, 100], [3, 200], [4, 300], [5, 500], [5, 400], [5, 250], [6, 370], [6, 360], [7, 380]];
+    // Action 
+    const result = maxEnvelopes(envelopes);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
   it("322. Coin Change 1", () => {
     // Arrange
     const expectedResult = 3;
