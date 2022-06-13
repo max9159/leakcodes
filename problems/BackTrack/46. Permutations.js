@@ -2,27 +2,24 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function (nums) {
-  var res = [];
+ var permute = function (nums) {
 
-  function backtrack(nums, track) {
+  function backtrack(nums, track, res) {
     if (track.length === nums.length) {
       res.push(track.slice());
       return;
     }
 
-    for (let i = 0; i < nums.length; i++) {
-      if (track.some((n) => n === nums[i])) {
-        continue;
-      }
-      track.push(nums[i]);
-      backtrack(nums, track);
+    for(num of nums) {
+      if (track.some((n) => n === num)) continue;
+
+      track.push(num);
+      backtrack(nums, track, res);
       track.pop();
     }
+      return res;
   }
 
-  let track = [];
-  backtrack(nums, track);
-  return res;
+  return backtrack(nums, [], []);
 };
 
