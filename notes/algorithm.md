@@ -73,9 +73,13 @@
   - Move the start and end
 - leetcode
   - https://leetcode.com/tag/sliding-window/
-
+## Backtracking
+- Hints
+  - To traverse roots
 ## BFS
-## DFS
+## DFS (Kind of Backtracking)
+- Hints
+  - To traverse nodes
 ## Dynamic Programing
 - Hints
   - Init dp table for memo.
