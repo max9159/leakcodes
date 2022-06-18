@@ -23,3 +23,4 @@
   return backtrack(nums, [], []);
 };
 
+module.exports = permute;

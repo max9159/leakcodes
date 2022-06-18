@@ -5,8 +5,57 @@ var lengthOfLongestSubstring = require('../problems/SlidingWindow/3. Longest Sub
 var findCheapestPrice = require('../problems/DynamicProgramming/787. Cheapest Flights Within K Stops');
 const coinChange = require("../problems/DynamicProgramming/322. Coin Change");
 const maxEnvelopes = require("../problems/DynamicProgramming/354. Russian Doll Envelopes");
+const permute = require("../problems/BackTrack/46. Permutations");
+const flattern = require("../problems/Others/Flatten a multi-dimensional array");
+const solveNQueens = require("../problems/BackTrack/51. N-Queens");
 
-describe("3. Longest Substring Without Repeating Characters M", () => {
+describe("Tests", () => {
+
+  it("51. N-Queens - 2", () => {
+    // Arrange
+    const input = 5;
+    const expectedResult = [["Q....", "..Q..", "....Q", ".Q...", "...Q."], ["Q....", "...Q.", ".Q...", "....Q", "..Q.."], [".Q...", "...Q.", "Q....", "..Q..", "....Q"], [".Q...", "....Q", "..Q..", "Q....", "...Q."], ["..Q..", "Q....", "...Q.", ".Q...", "....Q"], ["..Q..", "....Q", ".Q...", "...Q.", "Q...."], ["...Q.", "Q....", "..Q..", "....Q", ".Q..."], ["...Q.", ".Q...", "....Q", "..Q..", "Q...."], ["....Q", ".Q...", "...Q.", "Q....", "..Q.."], ["....Q", "..Q..", "Q....", "...Q.", ".Q..."]];
+    // Action 
+    const result = solveNQueens(input);
+
+    // Assert
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
+  });
+
+  it("51. N-Queens - 1", () => {
+    // Arrange
+    const input = 4;
+    const expectedResult = [[".Q..", "...Q", "Q...", "..Q."], ["..Q.", "Q...", "...Q", ".Q.."]];
+    // Action 
+    const result = solveNQueens(input);
+
+    // Assert
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
+  });
+
+  it("Flatten a multi-dimensional array", () => {
+    // Arrange
+    const input = [1, [2, 3], [4, 5, [6]]];
+    const expectedResult = [1, 2, 3, 4, 5, 6];
+    // Action 
+    const result = flattern(input);
+
+    // Assert
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
+  });
+
+  it("46. Permutations", () => {
+    // Arrange
+    const input = [1, 2, 3];
+    const expectedResult = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]];
+
+    // Action 
+    const result = permute(input);
+
+    // Assert
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
+  });
+
   it("354. Russian Doll Envelopes - 5", () => {
     // Arrange
     const expectedResult = 6;

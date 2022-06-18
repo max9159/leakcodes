@@ -76,6 +76,28 @@
 ## Backtracking
 - Hints
   - To traverse roots
+  - code snipe
+  ```js
+  function backTrack(_board, _row) {
+    // meet the condition
+    if (_row === _board.length) {
+      res.push([..._board]);
+      return;
+    }
+
+    let n = _board[_row].length;
+    for (let col = 0; col < n; col++) {
+      if (!isValid(_board, _row, col)) continue;
+
+      // make choise
+      _board[_row] = _board[_row].replaceAt(col, 'Q');
+      // go next
+      backTrack(_board, _row + 1);
+      // decline choise
+      _board[_row] = _board[_row].replaceAt(col, '.');
+    }
+  };
+  ```
 ## BFS
 ## DFS (Kind of Backtracking)
 - Hints
