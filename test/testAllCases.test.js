@@ -8,8 +8,21 @@ const maxEnvelopes = require("../problems/DynamicProgramming/354. Russian Doll E
 const permute = require("../problems/BackTrack/46. Permutations");
 const flattern = require("../problems/Others/Flatten a multi-dimensional array");
 const solveNQueens = require("../problems/BackTrack/51. N-Queens");
+const openLock = require("../problems/BFS/752. Open the Lock");
 
 describe("Tests", () => {
+
+  it("752. Open the Lock", () => {
+    // Arrange
+    const input = ["0201", "0101", "0102", "1212", "2002"]
+    const target = "0202";
+    const expectedResult = 6;
+    // Action 
+    const result = openLock(input, target);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
 
   it("51. N-Queens - 2", () => {
     // Arrange

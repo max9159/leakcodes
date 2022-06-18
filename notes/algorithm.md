@@ -108,7 +108,7 @@
 - Hints
   - Init dp table for memo.
   - 
-## Dijkstra’s Algorithm
+## Dijkstra’s Algorithm (From BFS)
 ## Sequece Search: O(n)
 ## Binary Search: O(log n)
 - Hints
