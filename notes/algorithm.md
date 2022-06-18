@@ -99,6 +99,8 @@
   };
   ```
 ## BFS
+- Hints
+  - Getting a shortest path from start to the end in a graph.
 ## DFS (Kind of Backtracking)
 - Hints
   - To traverse nodes
