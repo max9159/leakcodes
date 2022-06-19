@@ -32,8 +32,8 @@ var openLock = function (deadends, target) {
     return s.replaceAt(j, updateVal);
   }
 
-  function BFS(deadends, target) {
-
+  // BFS: Solution 1
+  function BFS1(deadends, target) {
     let deads = {};
     deadends.forEach(s => {
       deads[s] = s;
@@ -70,6 +70,42 @@ var openLock = function (deadends, target) {
         }
       }
       step++;
+    }
+    return -1;
+  }
+
+  // BFS: Solution 2 
+  function BFS(deadends, target) {
+    let deads = {};
+    deadends.forEach(s => deads[s] = s);
+    let visited = {};
+    let q1 = {};
+    let q2 = {};
+    let step = 0;
+    q1['0000'] = '0000';
+    q2[target] = target;
+    while (Object.keys(q1).length > 0 && Object.keys(q2).length > 0) {
+      let temp = {};
+
+      // let sz = q.size();
+      // poll all queues
+      for (const cur of Object.keys(q1)) {
+        if (deads[cur]) continue;
+        if (q2[cur]) return step;
+
+        visited[cur] = cur;
+
+        for (let j = 0; j < 4; j++) {
+          let up = plusOne(cur, j);
+          if (!visited[up]) temp[up] = up;
+
+          let down = minusOne(cur, j);
+          if (!visited[down]) temp[down] = down;
+        }
+      }
+      step++;
+      q1 = Object.assign({}, q2);
+      q2 = Object.assign({}, temp);
     }
     return -1;
   }
