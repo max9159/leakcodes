@@ -9,8 +9,32 @@ const permute = require("../problems/BackTrack/46. Permutations");
 const flattern = require("../problems/Others/Flatten a multi-dimensional array");
 const solveNQueens = require("../problems/BackTrack/51. N-Queens");
 const openLock = require("../problems/BFS/752. Open the Lock");
+const combine = require("../problems/BackTrack/77. Combinations");
+const subsetsWithDup = require("../problems/BackTrack/90. Subsets II");
 
 describe("Tests", () => {
+
+  it("90. Subsets II", () => {
+    // Arrange
+    const input = [1, 2, 2];
+    const expectedResult = [[1, 2, 3], [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5], [1, 4, 5], [2, 3, 4], [2, 3, 5], [2, 4, 5], [3, 4, 5]];
+    // Action 
+    const result = subsetsWithDup(input);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("77. Combinations", () => {
+    // Arrange
+    const input = 5, input2 = 3;
+    const expectedResult = [[1, 2, 3], [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5], [1, 4, 5], [2, 3, 4], [2, 3, 5], [2, 4, 5], [3, 4, 5]];
+    // Action 
+    const result = combine(input, input2);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
 
   it("752. Open the Lock", () => {
     // Arrange
