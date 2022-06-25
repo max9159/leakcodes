@@ -101,6 +101,8 @@
 ## BFS
 - Hints
   - Getting a shortest path from start to the end in a graph.
+  - Two way BFS: need to know the end.
+    - Refer problem [752. Open the Lock](../problems/BFS/752.%20Open%20the%20Lock.js)
 ## DFS (Kind of Backtracking)
 - Hints
   - Use the b-tree concept to traverse nodes with pruning
