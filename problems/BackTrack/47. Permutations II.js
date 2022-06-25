@@ -7,7 +7,7 @@ var permuteUnique = function (nums) {
   function backTrack(nums, tracks, res) {
     if (tracks.length === nums.length) {
       const val = JSON.stringify(tracks);
-      if(!memo[val]){
+      if (!memo[val]) {
         res.push(tracks.slice());
         memo[val] = val;
       }
@@ -15,12 +15,17 @@ var permuteUnique = function (nums) {
       return;
     }
 
+    let preNum = -11; // -10 <= nums[i] <= 10
     for (let i = 0; i < nums.length; i++) {
       if (used[i]) continue;
-      if (i > 0 && nums[i] === nums[i - 1] && !used[i - 1]) continue;
+      // Pruning Solution 1
+      // if (i > 0 && nums[i] === nums[i - 1] && !used[i - 1]) continue;
+      // Pruning Solution 2
+      if (nums[i] === prenum) continue;
 
       tracks.push(nums[i]);
       used[i] = true;
+      preNum = nums[i];
       backTrack(nums, tracks, res);
       tracks.pop();
       used[i] = false;
