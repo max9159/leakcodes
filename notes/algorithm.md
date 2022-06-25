@@ -103,7 +103,13 @@
   - Getting a shortest path from start to the end in a graph.
 ## DFS (Kind of Backtracking)
 - Hints
-  - To traverse nodes
+  - Use the b-tree concept to traverse nodes with pruning
+  - Types
+    1. Input nums **No duplicated**, Res **No duplicated**
+       1. Just check no duplicated.
+    2. Input nums **duplicated**, Res **No duplicated**
+       1. Use num !== pre or abosolute position
+    3. Input nums **duplicated**, Res **duplicated**
 ## Dynamic Programing
 - Hints
   - Init dp table for memo.
