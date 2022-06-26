@@ -11,18 +11,30 @@ const solveNQueens = require("../problems/BackTrack/51. N-Queens");
 const openLock = require("../problems/BFS/752. Open the Lock");
 const combine = require("../problems/BackTrack/77. Combinations");
 const subsetsWithDup = require("../problems/BackTrack/90. Subsets II");
+const maxProfit = require("../problems/DynamicProgramming/State Machine/121. Best Time to Buy and Sell Stock");
 
 describe("Tests", () => {
+
+  it("121. Best Time to Buy and Sell Stock", () => {
+    // Arrange
+    const input = [7,1,5,3,6,4];
+    const expectedResult =5;
+    // Action 
+    const result = maxProfit(input);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
 
   it("90. Subsets II", () => {
     // Arrange
     const input = [1, 2, 2];
-    const expectedResult = [[1, 2, 3], [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5], [1, 4, 5], [2, 3, 4], [2, 3, 5], [2, 4, 5], [3, 4, 5]];
+    const expectedResult = [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]];
     // Action 
     const result = subsetsWithDup(input);
 
     // Assert
-    assert.equal(result, expectedResult);
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
   });
 
   it("77. Combinations", () => {
@@ -33,7 +45,7 @@ describe("Tests", () => {
     const result = combine(input, input2);
 
     // Assert
-    assert.equal(result, expectedResult);
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
   });
 
   it("752. Open the Lock", () => {

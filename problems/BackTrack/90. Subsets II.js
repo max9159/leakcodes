@@ -27,3 +27,5 @@ var subsetsWithDup = function (nums) {
   return backTrack(nums.sort((a, b) => a - b), [], [], 0);
 
 };
+
+module.exports = subsetsWithDup;
