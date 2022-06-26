@@ -121,7 +121,20 @@
 ## Binary Search: O(log n)
 - Hints
   - array has been srtoed then split
-  - Code Snippet
+  - Scenario 1: Find a number
+  ```js
+  function binarySeaerch(nums, target) {
+    let left = 0, right = nums.length - 1;
+    while (left <= right) {
+      let mid = left + Math.floor((right - left) / 2);
+      if (nums[mid] === target) return mid;
+      else if (nums[mid] < target) left = mid + 1;
+      else if (nums[mid] > target) right = mid - 1;
+    }
+    return -1;
+  }
+  ```
+  - Scenario 2
   ``` js
   function lengthOfLIS(nums) {
     let top = Array(nums.length).fill(0);
@@ -142,6 +155,7 @@
     return piles;
   }
   ```
+
 ## merge sort: O(nlogn) 
   - splict then merge result
 ## quick sort: O(nlogn) 

@@ -12,13 +12,26 @@ const openLock = require("../problems/BFS/752. Open the Lock");
 const combine = require("../problems/BackTrack/77. Combinations");
 const subsetsWithDup = require("../problems/BackTrack/90. Subsets II");
 const maxProfit = require("../problems/DynamicProgramming/State Machine/121. Best Time to Buy and Sell Stock");
+const search = require("../problems/Binary Search/704. Binary Search");
 
 describe("Tests", () => {
 
+  it("704. Binary Search", () => {
+    // Arrange
+    const input = [-1, 0, 3, 5, 9, 12];
+    const input2 = 9;
+    const expectedResult = 4;
+    // Action 
+    const result = search(input, input2);
+
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
   it("121. Best Time to Buy and Sell Stock", () => {
     // Arrange
-    const input = [7,1,5,3,6,4];
-    const expectedResult =5;
+    const input = [7, 1, 5, 3, 6, 4];
+    const expectedResult = 5;
     // Action 
     const result = maxProfit(input);
 
