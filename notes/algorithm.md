@@ -120,7 +120,7 @@
 ## Sequece Search: O(n)
 ## Binary Search: O(log n)
 - Hints
-  - array has been srtoed then split
+  - Array has been sorted then split for each loop
   - Scenario 1: Find a number
   ```js
   function binarySeaerch(nums, target) {
