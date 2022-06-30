@@ -1,5 +1,22 @@
 # Algorithm
 
+- [Algorithm](#algorithm)
+  - [Binary Tree](#binary-tree)
+  - [Fast and Slow Pointer: O(n)](#fast-and-slow-pointer-on)
+  - [Sliding Window(Two pointer): O(n)](#sliding-windowtwo-pointer-on)
+  - [Backtracking](#backtracking)
+  - [BFS](#bfs)
+  - [DFS (Kind of Backtracking)](#dfs-kind-of-backtracking)
+  - [Dynamic Programing](#dynamic-programing)
+  - [Dijkstra’s Algorithm (From BFS)](#dijkstras-algorithm-from-bfs)
+  - [Sequece Search: O(n)](#sequece-search-on)
+  - [Binary Search: O(log n)](#binary-search-olog-n)
+  - [merge sort: O(nlogn)](#merge-sort-onlogn)
+  - [quick sort: O(nlogn)](#quick-sort-onlogn)
+  - [Selection Sort: O(n²)](#selection-sort-on)
+  - [Bubble Sort: O(n²)](#bubble-sort-on)
+  - [費氏數列(費波那契數列): O(2^n)](#費氏數列費波那契數列-o2n)
+  
 ## Binary Tree
 - Hints
   - Code snipe
