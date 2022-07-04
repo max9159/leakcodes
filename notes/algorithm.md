@@ -73,11 +73,17 @@
 
     while (right < s.length) {
       let addChar = s[right];
+      // Increse window size
       right++;
+      // ==== (change here) Update data
       validMap[addChar] = (validMap[addChar] || 0) + 1;
+      // Verfiy left side need close or not
       while (validMap[addChar] > 1) {
+        // remove data from window 
         let delChar = s[left];
+        // decrease window size
         left++;
+      // ==== (change here) Update data be removed
         validMap[delChar] = (validMap[delChar] || 0) - 1;
       }
       result = Math.max(result, right - left);

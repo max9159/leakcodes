@@ -11,6 +11,7 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function (list1, list2) {
+  // dummy node for result, p node will keep adding
   let dummy = new ListNode(-1);
   let p = dummy;
   let p1 = list1, p2 = list2;
@@ -23,11 +24,12 @@ var mergeTwoLists = function (list1, list2) {
       p.next = p1;
       p1 = p1.next;
     }
+    // p continues
     p = p.next;
   }
 
   if (p1 !== null) p.next = p1;
   if (p2 !== null) p.next = p2;
 
-  return dummy.next;
+  return dummy.next; // root has -1 dummy val, just use next
 };
