@@ -20,7 +20,9 @@ var gcdOfStrings = function(str1, str2) {
  * @return {string}
  */
  const gcdOfStrings = (str1, str2) => {
+  // confirm str1 and str2 could be divisible, if not return '';
   if (str1 + str2 !== str2 + str1) return '';
+  // Dvisible confirmed just find greatest common divisor by Euclidean algorithm 
   const gcd = (a, b) => (0 === b ? a : gcd(b, a % b));
   return str1.substring(0, gcd(str1.length, str2.length));
 };
