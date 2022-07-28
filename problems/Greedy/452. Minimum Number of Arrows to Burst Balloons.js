@@ -1,10 +1,10 @@
 /**
- * @param {number[][]} intervals
+ * @param {number[][]} points
  * @return {number}
  */
-var eraseOverlapIntervals = function (intervals) {
+ var findMinArrowShots = function(points) {
 
-  // Get overlapping count
+  // Get non-overlapping count
   function intervalSchedule(intvs) {
     // sort by end
     if (intvs.length === 0) return 0;
@@ -15,7 +15,11 @@ var eraseOverlapIntervals = function (intervals) {
     let xEnd = intvs[0][1];
     for (let i = 0; i < intvs.length; i++) {
       let start = intvs[i][0];
-      if (start >= xEnd) {
+
+      // here different from problem "435. Non-overlapping Intervals"
+      // due to the Balloons thourgh boundary could be count
+      // if (start >= xEnd) {  <<< 435 use this condition
+      if (start > xEnd) {
         // find next start val of range 
         count++;
         xEnd = intvs[i][1];
@@ -23,8 +27,5 @@ var eraseOverlapIntervals = function (intervals) {
     }
     return count;
   }
-  // Final result is need to return "overlapping" count
-  // so use intervals.length to minus "non-overlapping" 
-  const n = intervals.length;
-  return n - intervalSchedule(intervals);
+  return intervalSchedule(points);
 };
