@@ -2,12 +2,14 @@
 
 - [Algorithm](#algorithm)
   - [Binary Tree](#binary-tree)
-  - [Fast and Slow Pointer: O(n)](#fast-and-slow-pointer-on)
-  - [Sliding Window(Two pointer): O(n)](#sliding-windowtwo-pointer-on)
+  - [Two Pointer - Fast and Slow : O(n)](#two-pointer---fast-and-slow--on)
+  - [Two Pointer - Sliding Window: O(n)](#two-pointer---sliding-window-on)
   - [Backtracking](#backtracking)
-  - [BFS](#bfs)
-  - [DFS (Kind of Backtracking)](#dfs-kind-of-backtracking)
+  - [BFS (Breadth-First Search)](#bfs-breadth-first-search)
+  - [DFS (Depth-First Search)](#dfs-depth-first-search)
   - [Dynamic Programing](#dynamic-programing)
+    - [Dynamic Programing : Core](#dynamic-programing--core)
+  - [Dynamic Programing - Greedy](#dynamic-programing---greedy)
   - [Dijkstra’s Algorithm (From BFS)](#dijkstras-algorithm-from-bfs)
   - [Sequece Search: O(n)](#sequece-search-on)
   - [Binary Search: O(log n)](#binary-search-olog-n)
@@ -32,7 +34,7 @@
   ```
 - leetcode
   - https://leetcode.com/tag/binary-tree/
-## Fast and Slow Pointer: O(n)
+## Two Pointer - Fast and Slow : O(n)
 - Hints
   - Code snipe
   ``` javascript
@@ -63,7 +65,7 @@
   ```
 - leetcode
   - https://leetcode.com/tag/two-pointers/
-## Sliding Window(Two pointer): O(n)
+## Two Pointer - Sliding Window: O(n)
 - Hints
   - Code Snippet
   ``` javascript
@@ -98,6 +100,7 @@
   - https://leetcode.com/tag/sliding-window/
 ## Backtracking
 - Hints
+  - **Backtracking**: check not make sense result then **backtracking**
   - To traverse roots
   - code snipe
   ```js
@@ -121,13 +124,14 @@
     }
   };
   ```
-## BFS
+## BFS (Breadth-First Search)
 - Hints
   - Getting a shortest path from start to the end in a graph.
   - Two way BFS: need to know the end.
     - Refer problem [752. Open the Lock](../problems/BFS/752.%20Open%20the%20Lock.js)
-## DFS (Kind of Backtracking)
+## DFS (Depth-First Search)
 - Hints
+  - **DFS**: check visited node then **backtracking**
   - Use the b-tree concept to traverse nodes with pruning
   - Types
     1. Input nums **No duplicated**, Res **No duplicated**
@@ -135,10 +139,22 @@
     2. Input nums **duplicated**, Res **No duplicated**
        1. Use num !== pre or abosolute position
     3. Input nums **duplicated**, Res **duplicated**
+
 ## Dynamic Programing
 - Hints
-  - Init dp table for memo.
-  - 
+  - Just start with **Brute Force**
+  - Reduce cost by using memo/DP table.
+
+### Dynamic Programing : Core
+  - Optimal Substructure
+  - State Machine
+  - Overlapping Subproblems
+
+## Dynamic Programing - Greedy
+- Hints
+  - High performance then regular DP
+  - Can choose best selection would be greedy
+
 ## Dijkstra’s Algorithm (From BFS)
 ## Sequece Search: O(n)
 ## Binary Search: O(log n)
