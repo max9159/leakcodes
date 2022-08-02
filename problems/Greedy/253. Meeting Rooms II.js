@@ -1,3 +1,43 @@
+// ============================ Solution 2 =====================================
+/**
+ * @param {number[][]} meetings
+ * @return {number}
+ */
+var minMeetingRooms = function (meetings) {
+  let n = meetings.length;
+  let begin = new Array(n);
+  let end = new Array(n);
+  // get all start/end 
+  for (let i = 0; i < n; i++) {
+    begin[i] = meetings[i][0];
+    end[i] = meetings[i][1];
+  }
+
+  // Just check the start/end in timeline, so the combination is not important.
+  begin.sort((a, b) => a - b);
+  end.sort((a, b) => a - b);
+
+  let count = 0;
+  // two pointer
+  let res = 0, i = 0, j = 0;
+  while (i < n && j < n) {
+    if (begin[i] < end[j]) {
+      // found the start
+      count++;
+      i++;
+    } else {
+      // found the end
+      count--;
+      j++;
+    }
+    // check maximum
+    res = Math.max(res, count);
+
+  }
+  return res;
+}
+
+
 /**
  * @param {number[][]} intervals
  * @return {number}
