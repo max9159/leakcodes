@@ -16,3 +16,21 @@ var maxProfit = function (prices) {
   }
   return maxProfit;
 };
+
+// ========================== Solution 2 =======================================
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function (prices) {
+  let n = prices.length;
+  let maxProfit = 0, latestMinimumBuy = Number.NEGATIVE_INFINITY;
+  for (let i = 0; i < n; i++) {
+    let tempProfit = maxProfit;
+    // confirm max pofit for rest / sell.
+    maxProfit = Math.max(maxProfit, latestMinimumBuy + prices[i]);
+    // get minium buy price
+    latestMinimumBuy = Math.max(latestMinimumBuy, tempProfit - prices[i])
+  }
+  return maxProfit;
+};
