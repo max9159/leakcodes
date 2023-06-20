@@ -1,3 +1,34 @@
+// ============================ Solution 3 =====================================
+
+/**
+ * @param {number[][]} intervals
+ * @return {number}
+ */
+var minMeetingRooms = function(intervals) {
+  if(!intervals.length) {
+      return 0;
+  }
+
+  // sort the intervals by start time
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  // use a min-heap/priority queue to track the end time of meetings
+  let pq = [intervals[0][1]];
+
+  for(let i = 1; i < intervals.length; i++) {
+      if(intervals[i][0] >= pq[0]) {
+          // the meeting can take place in the current room, remove the room from the heap
+          pq.shift();
+      }
+
+      // add the current meeting's end time into the heap
+      pq.push(intervals[i][1]);
+      pq.sort((a, b) => a - b); // make sure the earliest ending time is at the front
+  }
+
+  // the size of the heap gives us the minimum rooms required
+  return pq.length;    
+};
 // ============================ Solution 2 =====================================
 /**
  * @param {number[][]} meetings
