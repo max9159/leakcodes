@@ -10,9 +10,11 @@
   - [Dynamic Programing](#dynamic-programing)
     - [Dynamic Programing : Core](#dynamic-programing--core)
   - [Dynamic Programing - Greedy](#dynamic-programing---greedy)
+  - [Binary Search: O(log n)](#binary-search-olog-n)
+  - [Graph](#graph)
+  - [Greedy](#greedy)
   - [Dijkstra’s Algorithm (From BFS)](#dijkstras-algorithm-from-bfs)
   - [Sequece Search: O(n)](#sequece-search-on)
-  - [Binary Search: O(log n)](#binary-search-olog-n)
   - [merge sort: O(nlogn)](#merge-sort-onlogn)
   - [quick sort: O(nlogn)](#quick-sort-onlogn)
   - [Selection Sort: O(n²)](#selection-sort-on)
@@ -154,9 +156,6 @@
 - Hints
   - High performance then regular DP
   - Can choose best selection would be greedy
-
-## Dijkstra’s Algorithm (From BFS)
-## Sequece Search: O(n)
 ## Binary Search: O(log n)
 - Hints
   - Array has been sorted then split for each loop
@@ -194,7 +193,12 @@
     return piles;
   }
   ```
-
+## Graph
+- [200. Number of Islands](/problems/BackTrack/200.%20Number%20of%20Islands.js)
+## Greedy
+- [253. Meeting Rooms II](/problems/Greedy/253.%20Meeting%20Rooms%20II.js)
+## Dijkstra’s Algorithm (From BFS)
+## Sequece Search: O(n)
 ## merge sort: O(nlogn) 
   - splict then merge result
 ## quick sort: O(nlogn) 
