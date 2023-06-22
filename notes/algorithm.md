@@ -194,7 +194,6 @@
   }
   ```
 ## Graph
-- [200. Number of Islands](/problems/BackTrack/200.%20Number%20of%20Islands.js)
 ## Greedy
 - [253. Meeting Rooms II](/problems/Greedy/253.%20Meeting%20Rooms%20II.js)
 ## Dijkstra’s Algorithm (From BFS)
