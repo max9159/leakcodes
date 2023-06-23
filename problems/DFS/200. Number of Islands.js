@@ -11,6 +11,7 @@ var numIslands = function (grid) {
     if (i < 0 || j < 0 || i >= m || j >= n) return;
     if (grid[i][j] === '0') return;
     grid[i][j] = '0';
+    // no need memorized visited caused by using flood fill
     // if (visited[i][j]) return;
     // visited[i][j] = true;
 
@@ -28,7 +29,8 @@ var numIslands = function (grid) {
       if (grid[i][j] === '1') {
         // is island
         res++;
-        // DFS with Flood Fill 
+        // DFS with Flood Fill
+        // Flood fill, also called seed fill, is a flooding algorithm 
         dfs(grid, i, j);
       }
     }
