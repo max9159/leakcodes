@@ -1,26 +1,25 @@
-# Algorithm
+# Algorithm<!-- omit in toc -->
 
-- [Algorithm](#algorithm)
-  - [Binary Tree](#binary-tree)
-  - [Two Pointer - Fast and Slow : O(n)](#two-pointer---fast-and-slow--on)
-  - [Two Pointer - Sliding Window: O(n)](#two-pointer---sliding-window-on)
-  - [Backtracking](#backtracking)
-  - [BFS (Breadth-First Search)](#bfs-breadth-first-search)
-  - [DFS (Depth-First Search)](#dfs-depth-first-search)
-  - [Dynamic Programing](#dynamic-programing)
-    - [Dynamic Programing : Core](#dynamic-programing--core)
-  - [Dynamic Programing - Greedy](#dynamic-programing---greedy)
-  - [Binary Search: O(log n)](#binary-search-olog-n)
-  - [Graph](#graph)
-  - [Greedy](#greedy)
-  - [Union-Find (Disjoint-set data structure)](#union-find-disjoint-set-data-structure)
-  - [Dijkstra’s Algorithm (From BFS)](#dijkstras-algorithm-from-bfs)
-  - [Sequece Search: O(n)](#sequece-search-on)
-  - [merge sort: O(nlogn)](#merge-sort-onlogn)
-  - [quick sort: O(nlogn)](#quick-sort-onlogn)
-  - [Selection Sort: O(n²)](#selection-sort-on)
-  - [Bubble Sort: O(n²)](#bubble-sort-on)
-  - [Fibonacci(費氏數列/費波那契數列): O(2^n)](#fibonacci費氏數列費波那契數列-o2n)
+- [Binary Tree](#binary-tree)
+- [N Tree](#n-tree)
+- [Two Pointer - Fast and Slow : O(n)](#two-pointer---fast-and-slow--on)
+- [Two Pointer - Sliding Window: O(n)](#two-pointer---sliding-window-on)
+- [Backtracking](#backtracking)
+- [DFS (Depth-First Search)](#dfs-depth-first-search)
+- [BFS (Breadth-First Search)](#bfs-breadth-first-search)
+- [Dynamic Programing](#dynamic-programing)
+  - [DP : Core](#dp--core)
+  - [DP : Greedy](#dp--greedy)
+- [Binary Search: O(log n)](#binary-search-olog-n)
+- [Graph](#graph)
+- [Union-Find (Disjoint-set data structure)](#union-find-disjoint-set-data-structure)
+- [Dijkstra’s Algorithm (From BFS)](#dijkstras-algorithm-from-bfs)
+- [Sequece Search: O(n)](#sequece-search-on)
+- [merge sort: O(nlogn)](#merge-sort-onlogn)
+- [quick sort: O(nlogn)](#quick-sort-onlogn)
+- [Selection Sort: O(n²)](#selection-sort-on)
+- [Bubble Sort: O(n²)](#bubble-sort-on)
+- [Fibonacci(費氏數列/費波那契數列): O(2^n)](#fibonacci費氏數列費波那契數列-o2n)
   
 ## Binary Tree
 - Hints
@@ -37,6 +36,19 @@
   ```
 - leetcode
   - https://leetcode.com/tag/binary-tree/
+## N Tree
+- Hints
+  ```js
+  // Travese `N Tree`
+  var traverse = function(root) {
+    if (root == null) return;
+    // Preorder
+    for (var i = 0; i < root.children.length; i++) {
+      traverse(root.children[i]);
+    }
+    // Postorder
+  };
+  ```
 ## Two Pointer - Fast and Slow : O(n)
 - Hints
   - Code snipe
@@ -101,7 +113,23 @@
   - Move the start and end
 - leetcode
   - https://leetcode.com/tag/sliding-window/
+
 ## Backtracking
+- Purpose
+  - Focused on `path`
+  ```js
+  var backtrack = function(root) {
+      if (root == null) return;
+      for (var i = 0; i < root.children.length; i++) {
+          var child = root.children[i];
+          // Make Choice
+          console.log("from " + root + " To " + child);
+          backtrack(child);
+          // Decline Choice
+          console.log("From " + child + " To " + root);
+      }
+  };
+  ```
 - Hints
   - **Backtracking**: check not make sense result then **backtracking**
   - To traverse roots
@@ -127,12 +155,20 @@
     }
   };
   ```
-## BFS (Breadth-First Search)
-- Hints
-  - Getting a shortest path from start to the end in a graph.
-  - Two way BFS: need to know the end.
-    - Refer problem [752. Open the Lock](../problems/BFS/752.%20Open%20the%20Lock.js)
 ## DFS (Depth-First Search)
+- Purpose
+  - Focused on `node`
+  ```js
+  var traverse = function(root) {
+      if (root == null) return;
+      // Enter the node
+      for (var i = 0; i < root.children.length; i++) {
+          var child = root.children[i];
+          traverse(child);
+      }
+      // Leave the node
+  };
+  ```
 - Hints
   - **DFS**: check visited node then **backtracking**
   - Use the b-tree concept to traverse nodes with pruning
@@ -143,20 +179,28 @@
        1. Use num !== pre or abosolute position
     3. Input nums **duplicated**, Res **duplicated**
 
+## BFS (Breadth-First Search)
+- Hints
+  - Getting a shortest path from start to the end in a graph.
+  - Two way BFS: need to know the end.
+    - Refer problem [752. Open the Lock](../problems/BFS/752.%20Open%20the%20Lock.js)
+
 ## Dynamic Programing
 - Hints
   - Just start with **Brute Force**
   - Reduce cost by using memo/DP table.
 
-### Dynamic Programing : Core
+### DP : Core
   - Optimal Substructure
   - State Machine
   - Overlapping Subproblems
 
-## Dynamic Programing - Greedy
+### DP : Greedy
 - Hints
   - High performance then regular DP
   - Can choose best selection would be greedy
+- [253. Meeting Rooms II](/problems/Greedy/253.%20Meeting%20Rooms%20II.js)
+
 ## Binary Search: O(log n)
 - Hints
   - Array has been sorted then split for each loop
@@ -194,14 +238,18 @@
     return piles;
   }
   ```
+
 ## Graph
-## Greedy
-- [253. Meeting Rooms II](/problems/Greedy/253.%20Meeting%20Rooms%20II.js)
+- Directed `Graph` could be kind of [N Tree](#n-tree)
+- Directed Acyclic Graph(DAG)
+  - No circle
+
 ## Union-Find (Disjoint-set data structure)
 - [1101. The Earliest Moment When Everyone Become Friends](/problems/UnionFind/1101.%20The%20Earliest%20Moment%20When%20Everyone%20Become%20Friends.js)
 - Hints
   - Two variables `parent`, `rank` to mock as a linkedlist
   - Two funcs `union`, `find`, `union` for merging and `find` for checking `parent`
+
 ## Dijkstra’s Algorithm (From BFS)
 ## Sequece Search: O(n)
 ## merge sort: O(nlogn) 
