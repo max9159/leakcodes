@@ -13,13 +13,14 @@
   - [Binary Search: O(log n)](#binary-search-olog-n)
   - [Graph](#graph)
   - [Greedy](#greedy)
+  - [Union-Find (Disjoint-set data structure)](#union-find-disjoint-set-data-structure)
   - [Dijkstra’s Algorithm (From BFS)](#dijkstras-algorithm-from-bfs)
   - [Sequece Search: O(n)](#sequece-search-on)
   - [merge sort: O(nlogn)](#merge-sort-onlogn)
   - [quick sort: O(nlogn)](#quick-sort-onlogn)
   - [Selection Sort: O(n²)](#selection-sort-on)
   - [Bubble Sort: O(n²)](#bubble-sort-on)
-  - [費氏數列(費波那契數列): O(2^n)](#費氏數列費波那契數列-o2n)
+  - [Fibonacci(費氏數列/費波那契數列): O(2^n)](#fibonacci費氏數列費波那契數列-o2n)
   
 ## Binary Tree
 - Hints
@@ -196,6 +197,11 @@
 ## Graph
 ## Greedy
 - [253. Meeting Rooms II](/problems/Greedy/253.%20Meeting%20Rooms%20II.js)
+## Union-Find (Disjoint-set data structure)
+- [1101. The Earliest Moment When Everyone Become Friends](/problems/UnionFind/1101.%20The%20Earliest%20Moment%20When%20Everyone%20Become%20Friends.js)
+- Hints
+  - Two variables `parent`, `rank` to mock as a linkedlist
+  - Two funcs `union`, `find`, `union` for merging and `find` for checking `parent`
 ## Dijkstra’s Algorithm (From BFS)
 ## Sequece Search: O(n)
 ## merge sort: O(nlogn) 
@@ -205,4 +211,4 @@
 ## Selection Sort: O(n²)
 ## Bubble Sort: O(n²)
   - Compare pairs need two - for loop
-## 費氏數列(費波那契數列): O(2^n)
+## Fibonacci(費氏數列/費波那契數列): O(2^n)
