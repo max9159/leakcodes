@@ -20,7 +20,8 @@
 - [Selection Sort: O(n²)](#selection-sort-on)
 - [Bubble Sort: O(n²)](#bubble-sort-on)
 - [Fibonacci(費氏數列/費波那契數列): O(2^n)](#fibonacci費氏數列費波那契數列-o2n)
-  
+- [Code Snippets Of Operation](#code-snippets-of-operation)
+
 ## Binary Tree
 - Hints
   - Code snipe
@@ -260,3 +261,72 @@
 ## Bubble Sort: O(n²)
   - Compare pairs need two - for loop
 ## Fibonacci(費氏數列/費波那契數列): O(2^n)
+
+## Code Snippets Of Operation
+```js
+
+  // -- Array --
+  // reduce, map, join, split
+  const sum = w.reduce((cur, pre) => pre += cur);
+  var morse = { "a": ".-"}
+  const str = val.split('').map((char)=> morse[char]).join('');
+
+  if (Array.isArray(_arr))
+  let n = 3, k = 4;
+  // [1, 2, 3]
+  const nums = Array.from({ length: n }).map((_, i) => i + 1); // another way: new Array( n ).fill(0).map((_, i) => i);
+  // [false, false, false]
+  let used = new Array(n).fill(false);
+  // 3 x 4 matrix with number 0 
+  let dp = new Array(n).fill(new Array(k).fill(0));
+  // shift (remove [0]), pop (remove [last])
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.shift(); // [ "Orange", "Apple", "Mango"];
+  fruits.pop(); // [ "Orange", "Apple"];
+  // slice
+  const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+  const citrus = fruits.slice(1, 3); // Orange,Lemon
+  // splice, No overlap found, insert the booking
+  array.splice(left, 0, [start, end]);
+
+  // -- Priority Queue --  
+  // use a min-heap/priority queue to track the end time of meetings
+  let pq = [intervals[0][1]];
+  for(let i = 1; i < intervals.length; i++) {
+      if(intervals[i][0] >= pq[0]) {
+          // the meeting can take place in the current room, remove the room from the heap
+          pq.shift();
+      }
+      // add the current meeting's end time into the heap
+      pq.push(intervals[i][1]);
+      pq.sort((a, b) => a - b); // make sure the earliest ending time is at the front
+  }
+  // the size of the heap gives us the minimum rooms required
+  return pq.length;
+
+  // -- string --
+  // substr, subString
+  var words = "Welcome to the world.";
+  //substr (start index, length)
+  words.substr(3);　// come to the world.
+  words.substr(3,6);　// come t
+  //substring (start index, end index)
+  words.substring(3);　// come to the world.
+  words.substring(3,6); // com
+  // fromCharCode
+  let char = String.fromCharCode(65); // A
+  JSON.stringify({ x: 5, y: 6 });
+  
+  // --- Object ---
+  const object1 = { a: 'somestring', b: 42 };
+  for (const [key, value] of Object.entries(object1)) {
+    console.log(`${key}: ${value}`);
+  }
+  const object1 = { a: 'somestring', b: 42, c: false };
+  console.log(Object.keys(object1)); // ["a", "b", "c"]
+  console.log(Object.values(object1)); // ["somestring", 42, false]
+  let obj2 = Object.assign({}, object1);
+  // sort
+  let sortedByKeysDesc = Object.keys(mapCounter).sort((a, b) => mapCounter[b] - mapCounter[a]);
+
+```
