@@ -14,8 +14,48 @@ const subsetsWithDup = require("../problems/BackTrack/90. Subsets II");
 const maxProfit = require("../problems/DynamicProgramming/State Machine/121. Best Time to Buy and Sell Stock");
 const search = require("../problems/Binary Search/704. Binary Search");
 const threeSum = require("../problems/TwoPointers/15. 3Sum");
+const twoSum = require("../problems/DataStructures/1. Two Sum");
+const searchRotated = require("../problems/Binary Search/33. Search in Rotated Sorted Array");
+const numIslands = require("../problems/DFS/200. Number of Islands");
 
 describe("Tests", () => {
+
+  it("1. Two Sum", () => {
+    // Arrange
+    const nums = [2, 7, 11, 15];
+    const target = 9;
+    const expectedResult = [0, 1];
+    // Action
+    const result = twoSum(nums, target);
+    // Assert
+    assert.equal(JSON.stringify(result), JSON.stringify(expectedResult));
+  });
+
+  it("33. Search in Rotated Sorted Array", () => {
+    // Arrange
+    const nums = [4, 5, 6, 7, 0, 1, 2];
+    const target = 0;
+    const expectedResult = 4;
+    // Action
+    const result = searchRotated(nums, target);
+    // Assert
+    assert.equal(result, expectedResult);
+  });
+
+  it("200. Number of Islands", () => {
+    // Arrange
+    const grid = [
+      ["1", "1", "0", "0", "0"],
+      ["1", "1", "0", "0", "0"],
+      ["0", "0", "1", "0", "0"],
+      ["0", "0", "0", "1", "1"]
+    ];
+    const expectedResult = 3;
+    // Action
+    const result = numIslands(grid);
+    // Assert
+    assert.equal(result, expectedResult);
+  });
 
   it("15. 3Sum - basic", () => {
     // Arrange

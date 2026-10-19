@@ -37,3 +37,5 @@ var numIslands = function (grid) {
   }
   return res;
 };
+
+module.exports = numIslands;
